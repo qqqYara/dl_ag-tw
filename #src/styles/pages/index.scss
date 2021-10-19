@@ -1,0 +1,493 @@
+/* --------------------------------------------------------------------------
+ * >>> Home Page :
+ * -------------------------------------------------------------------------- */
+
+#scroll-down,
+#scroll-up {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+}
+
+/* ----------------- firstscreen ----------------- */
+
+.home__firstscreen {
+  position: relative;
+  overflow: hidden;
+  // height: 800px;
+  // @include md-up {
+  //   width: unset;
+  // }
+
+  &:before {
+    display: none;
+    content: url('../images/pages/home/snow-star.png');
+    position: absolute;
+    bottom: -100%;
+    left: -220px;
+    transition: $slowAnim;
+    animation: rotating 7s linear infinite;
+    z-index: -1;
+    @include ltm-up {
+      display: block;
+    }
+  }
+  &.active:before {
+    bottom: 0;
+  }
+  .container {
+    padding-top: 125px;
+    padding-left: 10px;
+
+    @include md-up {     
+      padding-top: 200px;
+    }
+    @include md-up {      
+      padding-top: 150px;
+      padding-left: 80px;
+    }
+    @include lg-up {
+      padding-top: 150px;
+    }
+    @include xl-up {
+      padding-top: 250px;
+      padding-left: 148px;
+    }    
+  }
+  .caption {
+    font-family: $secondaryFont;
+    font-size: 28px;
+    line-height: 120%;
+    margin-bottom: 45px;
+
+    @include md-up {
+      font-size: 38px;
+      margin-bottom: 30px;
+    }
+  }
+  .btn-transperent {
+    margin: 0 auto;
+    @include md-up {
+      margin: unset;
+    }
+  }
+}
+.stars {
+  position: absolute;
+  top: 30px;
+  left: 80px;
+  animation: stars-first-screen 3s infinite alternate;
+  z-index: -1;
+}
+
+.santa-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  .santa-image {
+    width: 500px;
+    @include md-up {
+      width: 700px;
+    }
+    @include ltl-up {
+      width: unset;
+    }
+    @include xl-up {
+      width: 1200px;
+    }
+  }
+  .santa-say {
+    display: none;
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    @include md-up {
+      display: block;
+      top: 30%;
+      left: 10%;
+    }
+    @include xl-up {
+      top: 15%;
+      left: 15%;      
+    }
+    span {
+      position: absolute;
+      top: 55px;
+      left: 40px;
+      max-width: 170px;
+      font-family: $secondaryFont;
+      font-size: 18px;
+      color: #000;
+    }
+  }
+}
+/* ----------------- present ----------------- */
+
+.home__present {
+  position: relative;
+  background-image: url(../images/pages/home/present-screen-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  @include mm-up {
+    height: 1340px!important;
+  }
+  @include md-up {
+    height: 100vh!important;
+  }
+
+  &:before {
+    display: none;
+    content: url('../images/pages/home/snow-star.png');
+    position: absolute;
+    top: -100%;
+    left: -220px;
+    transition: $slowAnim;
+    animation: rotating 7s linear infinite;
+    @include ltm-up {
+      display: block;
+    }
+  }
+  &.active:before {
+    top: -10%;
+  }
+  .container {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 20px;
+    padding-top: 120px;
+
+    @include md-up {
+      padding: 0 40px;
+      padding-top: 150px;
+    }
+    @include lg-up {
+      padding: 0 80px;
+      padding-top: 150px;
+    }
+    @include lg-up {
+      flex-direction: row;
+    }
+    @include xl-up {
+      padding: 0 80px;
+      padding-top: 200px;
+    }
+    .left {
+      width: 100%;
+      margin-bottom: 30px;
+
+      @include lt-up {
+        width: 65%;
+      }
+      @include ltm-up {
+        width: 48%;
+      }
+
+      .caption {
+        font-family: $secondaryFont;
+        font-size: 38px;
+        line-height: 125%;
+        margin-bottom: 30px;
+      }
+
+    }
+    .right {
+      width: 100%;
+
+      @include lt-up {
+        width: 35%;
+      }
+      @include ltm-up {
+        width: 48%;
+      }
+    }
+
+  }
+}
+.present-thumbs {
+  display: flex;
+}
+.present-thumb-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 110px;
+  height: 110px;
+  border: 5px solid #FFFFFF;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: inset 4px 10px 15px rgba(0, 0, 0, 0.25);
+  transition: $slowAnim;
+  margin-right: 10px;
+  cursor: pointer;
+  @include md-up {
+    width: 150px;
+    height: 150px;
+    margin-right: 40px;
+
+  }
+
+  &:last-child {
+    margin:0;
+  }
+  &:hover {
+    background: transparent;
+    box-shadow: unset;        
+  }
+  &.active {
+    background: transparent;
+    box-shadow: unset;
+  }
+
+  img {
+    width: 74%;
+    cursor: pointer;
+    @include md-up {
+      width: unset;
+    }
+  }
+}
+
+.present-tab {
+  padding: 15px 15px 15px 15px;
+  border-radius: 20px;
+  @include md-up {
+    padding: 58px 38px 38px 38px;
+    border: 3px solid #FFFFFF;
+    border-radius: 20px;
+  }
+}
+.present-tab-item {
+  display: none;
+  flex-direction: column-reverse;
+
+  @include md-up {
+    flex-direction: row;
+  }
+
+  &.active {
+    display: flex;
+  }
+  .heading {
+    font-family: $secondaryFont;
+    font-size: 42px;
+    line-height: 125%;
+    margin-bottom: 30px;
+  }
+  p {
+    font-size: 28px;
+    line-height: 125%;    
+  }
+  img {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    @include md-up {
+      width: unset;
+      margin: unset;
+    }
+    @include lt-up {
+      display: none;
+      width: unset;
+    }
+    @include ltm-up {
+      display: block;
+    }
+  }
+}
+
+/* ----------------- contact_form ----------------- */
+
+.home__contact_form {
+  position: relative;
+  background-image: url(../images/pages/home/contact-screen-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  @include mm-up {
+    height: 840px!important;
+  }  
+  @include md-up {
+    height: 100vh!important;
+  }
+
+  .container {
+    padding: 0 20px;
+    padding-top: 130px;
+
+    @include md-up {
+      padding: 0 40px;
+      padding-top: 150px;
+    }
+    @include lg-up {
+      padding-left: 70px;
+      padding-top: 150px;
+    }
+    @include xl-up {
+      padding-top: 180px;
+    }
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 468px;
+  width: 100%;
+
+  .input-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+
+    @include lg-up {
+      flex-direction: row;
+    }
+  }
+  .input-item {
+    width: 100%;
+    height: 48px;
+    background: transparent;
+    border: 3px solid #FFFFFF;
+    border-radius: 15px;
+    padding-left: 15px;
+    margin-bottom: 20px;
+
+    
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */      
+      font-size: 16px;
+      color: #FFFFFF;
+      opacity: 1;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      font-size: 16px;
+      color: #FFFFFF;
+      opacity: 1;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      font-size: 16px;
+      color: #FFFFFF;
+      opacity: 1;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      font-size: 16px;
+      color: #FFFFFF;
+      opacity: 1;
+    }
+
+    @include lg-up {
+      width: 48%;
+    }
+
+  }
+  .textarea-item {
+    width: 100%;
+    height: 76px;
+    background: transparent;
+    border: 3px solid #FFFFFF;
+    border-radius: 15px;
+    padding-top: 15px;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    resize: none;
+
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */      
+      font-size: 16px;
+      color: #FFFFFF;
+      opacity: 1;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      font-size: 16px;
+      color: #FFFFFF;
+      opacity: 1;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      font-size: 16px;
+      color: #FFFFFF;
+      opacity: 1;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      font-size: 16px;
+      color: #FFFFFF;
+      opacity: 1;
+    }
+  }
+  select {
+    font-size: 16px;
+    color: #FFFFFF;
+    opacity: 1;
+  }
+
+  .label-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    line-height: 120%;
+    color: #D02B2B;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: transparent;
+      border: 2px solid #D02B2B;
+      border-radius: 3px;
+      transition: $slowAnim;
+    }
+    input:checked ~ .checkmark {
+      background-color: #FFFFFF;
+    }
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 1px;
+      width: 7px;
+      height: 11px;
+      border: solid #D02B2B;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      transition: $slowAnim;
+      opacity: 0;
+    }
+    input:checked ~ .checkmark:after {
+      opacity: 1;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+  // input.checkbox[type=checkbox] + label {
+  //   background: url('../images/notchecked.svg') no-repeat;
+  //   display: block;
+  // }
+  // input.checkbox[type=checkbox]:checked + label {
+  //   background: url('../images/checked.svg') no-repeat!important;
+  //   display: block;
+  // }
+}

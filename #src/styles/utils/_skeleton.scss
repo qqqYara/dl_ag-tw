@@ -1,0 +1,61 @@
+/* --------------------------------------------------------------------------
+ * >>> Skeleton :
+ * -------------------------------------------------------------------------- */
+ 
+body {
+  position: relative;
+  font-family: $mainFont;
+  box-sizing: border-box;
+  color: $white;
+  background: $bgFirst;
+}
+.body-overflow {
+  overflow: hidden;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  // max-width: 100%;
+  // width: 100%;
+  // padding: 0 15px;
+  // margin: 0 auto;
+
+  // @include md-up {
+  //   max-width: 720px;
+  // }
+  // @include lt-up {
+  //   max-width: 100%;
+  // }
+  // @include ltm-up {
+  //   max-width: 1180px;
+  // }
+  // @include ltl-up {
+  //   max-width: 1320px;
+  // }
+}
+h1 {
+  font-family: $secondaryFont;
+  font-size: 52px;
+  line-height: 120%;
+  @include md-up {
+    font-size: 72px;
+  }
+}
+h2 {
+  font-family: $secondaryFont;
+  font-size: 42px;
+  line-height: 120%; 
+  margin-bottom: 30px;
+
+  @include sm-up {
+    font-size: 52px;
+  }
+  @include md-up {
+    font-size: 56px;
+  } 
+}
